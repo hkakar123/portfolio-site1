@@ -1,0 +1,359 @@
+:root{
+  --bg:#0d1117;
+  --panel:#0f1620;
+  --accent:#58a6ff;
+  --muted:#9aa6b2;
+  --glass: rgba(255,255,255,0.03);
+}
+
+/* Reset small things */
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#e6edf3;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* ------- HERO ------- */
+.hero{
+  position:relative;
+  min-height:82vh;
+  padding:5vh 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.hero-bg{
+  position:absolute; inset:0; z-index:0; pointer-events:none;
+}
+.glow-line{
+  position:absolute; left:-15%; right:-15%;
+  height:2px;
+  background: linear-gradient(90deg, transparent, rgba(88,166,255,0.28), transparent);
+  filter: blur(6px);
+  transform:translateY(0);
+  opacity:0.8;
+}
+.l1{ top:18%; animation:glowMove 12s linear infinite; }
+.l2{ top:48%; animation:glowMove 16s linear infinite; animation-delay:2s; }
+.l3{ top:78%; animation:glowMove 20s linear infinite; animation-delay:4s; }
+
+@keyframes glowMove{
+  0%{ transform: translateX(-30%) scaleX(1); opacity:.9 }
+  50%{ transform: translateX(30%) scaleX(1.1); opacity:.6 }
+  100%{ transform: translateX(-30%) scaleX(1); opacity:.9 }
+}
+
+.glow-overlay{
+  position:absolute; inset:0;
+  background: radial-gradient(circle at 20% 10%, rgba(56,189,248,0.06), transparent 10%),
+              radial-gradient(circle at 80% 85%, rgba(88,166,255,0.04), transparent 12%);
+  pointer-events:none;
+}
+
+/* hero text */
+.hero-content{ z-index:2; max-width:960px; padding:0 24px; }
+.hero-title{ font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.02em; margin-bottom:0; }
+.accent{ color:var(--accent); text-shadow: 0 6px 30px rgba(88,166,255,0.08); }
+
+/* the line with "I build" + rotator */
+.hero-sub{
+  color:var(--muted);
+  font-size:1.125rem;
+  display:flex;
+  align-items:baseline;   /* aligns text baselines */
+  justify-content:center;
+  gap:.2rem;              /* tighter horizontal space */
+  margin-top:.6rem;
+  line-height:1.1;
+}
+.hero-sub .lead{
+  margin:0;               /* neutralize Bootstrap margins */
+  line-height:1.1;
+}
+
+/* the rotating word */
+.skill-rotator{
+  display:inline-block;
+  font-weight:700;
+  color:var(--accent);
+  line-height:1.1;
+  white-space:nowrap;
+  border-right:2px solid var(--accent); /* typing cursor */
+  padding-right:4px;
+  /* IMPORTANT: no min-width here, prevents big gaps */
+}
+
+/* Separator band */
+.hero-separator{ height:12px; display:block; background: linear-gradient(90deg, rgba(88,166,255,0.12), rgba(56,189,248,0.08)); }
+
+/* ------- SKILLS GRID ------- */
+.section-title{ color:var(--accent); margin-bottom:1.25rem; font-family: 'Orbitron', sans-serif; }
+.skills-grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px,1fr));
+  gap:1.1rem;
+  align-items:center;
+  justify-items:center;
+  margin-top:1.2rem;
+}
+.skill{
+  width:110px; height:110px;
+  display:grid; place-items:center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:14px;
+  transition: transform .25s ease, box-shadow .25s ease;
+  box-shadow: 0 6px 24px rgba(2,6,23,0.35);
+  cursor:default;
+}
+.skill img{ width:68%; height:auto; display:block; filter: drop-shadow(0 6px 18px rgba(2,6,23,0.4)); }
+/* remove borders appearance */
+.skill img{ background:none; border:none; }
+
+/* hover glow */
+.skill:hover{ transform: translateY(-8px) scale(1.02); box-shadow: 0 18px 40px rgba(56,189,248,0.12); }
+
+/* ------- Profile image ------- */
+.profile-img{ width:220px; height:220px; object-fit:cover; border-radius:18px; border: 3px solid rgba(255,255,255,0.03); }
+
+/* ------- Certificate cards ------- */
+.cert-card{
+  display:block;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius:12px;
+  padding:0;
+  overflow:hidden;
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+.cert-card img{ display:block; width:100%; height:220px; object-fit:cover; }
+.cert-card figcaption{ padding:12px 14px; color:var(--muted); background:transparent; }
+.cert-card:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(88,166,255,0.06); }
+
+/* ------- Projects ------- */
+.project-card{ border-radius:12px; overflow:hidden; background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); transition: transform .25s ease; }
+.project-img{ width:100%; height:210px; object-fit:cover; display:block; }
+.project-body{ padding:14px; color:var(--muted); }
+.project-card:hover{ transform: translateY(-8px); box-shadow: 0 18px 40px rgba(56,189,248,0.06); }
+
+/* ------- Timeline (experience) ------- */
+.timeline{ display:flex; flex-direction:column; gap:18px; margin-top:12px; }
+.timeline-item{ display:flex; gap:18px; align-items:flex-start; background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); padding:14px; border-radius:10px; }
+.timeline-item time{ min-width:84px; color:var(--muted); font-weight:600; }
+
+/* small dark panels */
+.bg-dark-section{ background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.00)); }
+
+/* responsive tweaks */
+@media (max-width:768px){
+  .skills-grid{ grid-template-columns: repeat(4,1fr); gap: .8rem; }
+  .hero-title{ font-size:1.9rem; }
+  .skill{ width:90px; height:90px; }
+}
+
+/* small buttons */
+.btn-outline-light{ border-color: rgba(255,255,255,0.08); color:#fff; }
+
+.hero {
+  overflow-x: hidden;
+}
+
+/* Modernized timeline cards */
+.timeline-item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+  padding: 20px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 4px 15px rgba(88,166,255,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(88,166,255,0.15);
+}
+
+.timeline-item time {
+  min-width: 90px;
+  color: var(--accent);
+  font-weight: 700;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Optional: small vertical connector line */
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: 42px; /* adjust for alignment with time */
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: rgba(88,166,255,0.1);
+  border-radius: 1px;
+  z-index: 0;
+}
+
+.timeline-body h5 {
+  margin-bottom: 0.3rem;
+  color: #e6edf3;
+}
+.timeline-body p {
+  color: var(--muted);
+  margin: 0;
+}
+
+.card::before {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 50px;
+  margin-bottom: 10px;
+  background: var(--accent);
+  border-radius: 2px;
+}
+
+.timeline-body h5, #education h5 {
+  transition: color 0.3s ease;
+}
+.timeline-item:hover h5, #education .card:hover h5 {
+  color: var(--accent);
+}
+
+
+
+/* Education modern cards */
+#education .card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.005));
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(88,166,255,0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none; /* remove default Bootstrap border */
+}
+
+#education .card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(88,166,255,0.15);
+}
+
+#education h5 {
+  color: #e6edf3;
+  margin-bottom: 0.3rem;
+}
+
+#education p {
+  color: var(--muted);
+}
+.btn-primary span,
+.btn-outline-light span {
+  position: relative;
+  z-index: 1;
+}
+
+
+
+/* All transparent buttons */
+.btn-primary, .btn-outline-light {
+  position: relative;
+  display: inline-block;
+  padding: 0.625rem 1.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 8px; /* squarish */
+  overflow: hidden;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  transition: color 0.4s ease;
+}
+
+/* Hover effect: background fill from left */
+.btn-primary, .btn-outline-light {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;  /* text is on top */
+}
+
+.btn-primary::before,
+.btn-outline-light::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--accent);
+  z-index: -1;  /* put hover background behind text */
+  transition: width 0.4s ease;
+}
+
+
+.btn-primary:hover,
+.btn-outline-light:hover {
+  color: #fff; /* text on hover */
+}
+
+.btn-primary:hover::before,
+.btn-outline-light:hover::before {
+  width: 100%;
+}
+
+/* Ensure text stays on top */
+.btn-primary span,
+.btn-outline-light span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Make "Code" buttons solid */
+.btn-outline-light.code-btn,
+.btn-sm.btn-outline-light.code-btn {
+  background: var(--accent);
+  color: #0d1117;
+  border: none;
+}
+
+.btn-outline-light.code-btn:hover {
+  background: #58a6ff; /* slightly brighter on hover if needed */
+}
+
+
+/* Skill container */
+.skill {
+  width: 90px;
+  height: 90px;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: 14px;
+  cursor: default;
+  overflow: hidden; 
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill-inner {
+  width: 100%;      /* controls max logo size */
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.skill-inner img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain; 
+  display: block;
+  filter: drop-shadow(0 6px 18px rgba(2,6,23,0.4));
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.skill:hover {
+  transform: translateY(-6px) scale(1.05);
+  box-shadow: 0 18px 40px rgba(56,189,248,0.12);
+}

@@ -1,6 +1,6 @@
 3552
 69C:\Users\afgka\Documents\portfolio\node_modules\has-flag\package.json134016156739472436 0
-41C:\Users\afgka\Documents\portfolio\assets134021101969608991 1
+41C:\Users\afgka\Documents\portfolio\assets134021144786781550 1
 73C:\Users\afgka\Documents\portfolio\node_modules\tslib\CopyrightNotice.txt134016156742453810 0
 93C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\css-text-indent.js134016156753860538 0
 87C:\Users\afgka\Documents\portfolio\node_modules\lmdb\node_modules\node-addon-api\napi.h134016156753759879 0
@@ -38,7 +38,7 @@
 51C:\Users\afgka\Documents\portfolio\assets\react.png134017636804837994 0
 91C:\Users\afgka\Documents\portfolio\node_modules\@mischnic\json-sourcemap\dist\index.js.flow134016156744946913 0
 66C:\Users\afgka\Documents\portfolio\node_modules\dotenv\config.d.ts134016156742307396 0
-45C:\Users\afgka\Documents\portfolio\index.html134021120766268370 0
+45C:\Users\afgka\Documents\portfolio\index.html134021144993803285 0
 54C:\Users\afgka\Documents\portfolio\node_modules\semver134016156743981817 1
 82C:\Users\afgka\Documents\portfolio\node_modules\type-fest\ts41\delimiter-case.d.ts134016156742377576 0
 91C:\Users\afgka\Documents\portfolio\node_modules\update-browserslist-db\check-npm-version.js134016156740606172 0
@@ -1946,7 +1946,7 @@
 91C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\console-basic.js134016156745790590 0
 72C:\Users\afgka\Documents\portfolio\node_modules\@swc\helpers\_\_inherits134016156754267360 1
 90C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\console-time.js134016156745815653 0
-57C:\Users\afgka\Documents\portfolio\dist\assets\resume.pdf134021105042834755 0
+57C:\Users\afgka\Documents\portfolio\dist\assets\resume.pdf134021145043478101 0
 93C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\contenteditable.js134016156745926424 0
 99C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\contentsecuritypolicy.js134016156745976472 0
 102C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\mdn-text-decoration-line.js134016156759142289 0
@@ -2196,7 +2196,7 @@
 72C:\Users\afgka\Documents\portfolio\node_modules\@parcel\transformer-html134016156747513985 1
 83C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\forms.js134016156756032380 0
 88C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\fullscreen.js134016156756062422 0
-52C:\Users\afgka\Documents\portfolio\assets\resume.pdf133978031855291070 0
+52C:\Users\afgka\Documents\portfolio\assets\resume.pdf134021143238480130 0
 77C:\Users\afgka\Documents\portfolio\node_modules\@parcel\workers\lib\Worker.js134016156744819743 0
 98C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\high-resolution-time.js134016156756694095 0
 96C:\Users\afgka\Documents\portfolio\node_modules\caniuse-lite\data\features\html-media-capture.js134016156756819536 0
@@ -3513,7 +3513,7 @@
 58C:\Users\afgka\Documents\portfolio\dist\robot.6da2708d.png134017642915875779 0
 73C:\Users\afgka\Documents\portfolio\node_modules\@lezer\lr\dist\index.d.ts134016156743636320 0
 71C:\Users\afgka\Documents\portfolio\node_modules\@lezer\lr\dist\index.js134016156743474419 0
-46C:\Users\afgka\Documents\portfolio\dist\assets134021105043303942 1
+46C:\Users\afgka\Documents\portfolio\dist\assets134021145043497977 1
 66C:\Users\afgka\Documents\portfolio\node_modules\@lezer\common\dist134016156742480133 1
 74C:\Users\afgka\Documents\portfolio\node_modules\@lezer\common\package.json134016156742377576 0
 76C:\Users\afgka\Documents\portfolio\node_modules\@lezer\common\dist\index.cjs134016156741846359 0
